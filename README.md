@@ -1,14 +1,16 @@
 # promptle-claude
 
-Play [Promptle](https://promptle.app) while waiting for Claude Code background tasks. Get a notification right on the game page when your task finishes.
+> A Claude Code skill that lets you play [Promptle](https://promptle.app) while waiting for background tasks — and notifies you on the game page when your agent finishes.
 
-## Install
+**Promptle** is a daily AI image guessing game. You see an AI-generated image and guess the 5-word prompt that created it. Think Wordle, but for AI image prompts.
+
+## Quick Start
 
 ```bash
 npm install -g promptle-claude
 ```
 
-Then add the skill to your Claude Code settings. Open `~/.claude/settings.json` and add:
+Add to `~/.claude/settings.json`:
 
 ```json
 {
@@ -16,9 +18,11 @@ Then add the skill to your Claude Code settings. Open `~/.claude/settings.json` 
 }
 ```
 
-## Setup Completion Notifications (Optional)
+Then type `/promptle` in Claude Code. Today's puzzle opens in your browser.
 
-To get notified on the Promptle page when your background agent finishes, add this hook to your `~/.claude/settings.json`:
+## Completion Notifications
+
+Kicked off a long-running background agent? Add this hook and you'll get a toast notification right on the Promptle page when it finishes:
 
 ```json
 {
@@ -33,8 +37,21 @@ To get notified on the Promptle page when your background agent finishes, add th
 }
 ```
 
-## Usage
+Add this to the same `~/.claude/settings.json` file. The hook fires when a background agent completes, sending a notification to your open Promptle tab.
 
-Type `/promptle` in Claude Code to open today's puzzle in your browser.
+## How It Works
 
-If you have the hook configured and a background agent is running, you'll see a toast notification on the game page when it completes.
+1. `/promptle` generates a unique session ID and opens `promptle.app/play?session=<id>`
+2. You play today's puzzle while your agent works
+3. When the agent finishes, the hook POSTs to the notify endpoint
+4. A toast appears on the game page: "Your background task just finished!"
+
+## Links
+
+- [Play Promptle](https://promptle.app) — try today's puzzle
+- [Promptle on npm](https://www.npmjs.com/package/promptle-claude) — package listing
+- [Source](https://github.com/jacobvip/promptle-claude) — this repo
+
+## License
+
+MIT
