@@ -1,0 +1,13 @@
+{
+  "name": "promptle-claude",
+  "version": "1.0.0",
+  "description": "Play Promptle while waiting for Claude Code background tasks",
+  "keywords": ["claude-code", "skill", "promptle", "game"],
+  "license": "MIT",
+  "homepage": "https://promptle.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacobvip/promptle-claude"
+  },
+  "files": ["skill.md", "README.md"]
+}
