@@ -1,6 +1,6 @@
 {
   "name": "promptle-claude",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Play Promptle while waiting for Claude Code background tasks",
   "keywords": ["claude-code", "skill", "promptle", "game"],
   "license": "MIT",
@@ -9,5 +9,9 @@
     "type": "git",
     "url": "https://github.com/jacobvip/promptle-claude"
   },
-  "files": ["skill.md", "README.md"]
+  "files": ["SKILL.md", "scripts/", "README.md"],
+  "scripts": {
+    "postinstall": "sh scripts/postinstall.sh",
+    "preuninstall": "sh scripts/preuninstall.sh"
+  }
 }

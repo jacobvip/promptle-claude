@@ -4,25 +4,21 @@
 
 **Promptle** is a daily AI image guessing game. You see an AI-generated image and guess the 5-word prompt that created it. Think Wordle, but for AI image prompts.
 
-## Quick Start
+## Install
 
 ```bash
 npm install -g promptle-claude
 ```
 
-Add to `~/.claude/settings.json`:
+That's it. The `/promptle` slash command is now available in Claude Code.
 
-```json
-{
-  "skills": ["promptle-claude"]
-}
-```
+## Usage
 
-Then type `/promptle` in Claude Code. Today's puzzle opens in your browser.
+Type `/promptle` in Claude Code. Today's puzzle opens in your browser.
 
-## Completion Notifications
+## Completion Notifications (Optional)
 
-Kicked off a long-running background agent? Add this hook and you'll get a toast notification right on the Promptle page when it finishes:
+Kicked off a long-running background agent? Add this hook to `~/.claude/settings.json` and you'll get a toast notification right on the Promptle page when it finishes:
 
 ```json
 {
@@ -37,7 +33,7 @@ Kicked off a long-running background agent? Add this hook and you'll get a toast
 }
 ```
 
-Add this to the same `~/.claude/settings.json` file. The hook fires when a background agent completes, sending a notification to your open Promptle tab.
+The hook fires when a background agent completes, sending a notification to your open Promptle tab.
 
 ## How It Works
 
@@ -46,10 +42,17 @@ Add this to the same `~/.claude/settings.json` file. The hook fires when a backg
 3. When the agent finishes, the hook POSTs to the notify endpoint
 4. A toast appears on the game page: "Your background task just finished!"
 
+## Uninstall
+
+```bash
+npm uninstall -g promptle-claude
+```
+
+The skill is automatically removed from Claude Code.
+
 ## Links
 
 - [Play Promptle](https://promptle.app) — try today's puzzle
-- [Promptle on npm](https://www.npmjs.com/package/promptle-claude) — package listing
 - [Source](https://github.com/jacobvip/promptle-claude) — this repo
 
 ## License
